@@ -1,9 +1,8 @@
+# QICK Library for Ion Traps
 
-<p align="center">
- <img src="graphics/logoQICK.svg" alt="QICK logo" width=50% height=auto>
-</p>
+This is a fork of the QICK library used for ion trap applications. 
 
-# QICK: Quantum Instrumentation Control Kit
+# Description of QICK: Quantum Instrumentation Control Kit
 
 QICK is an open-source qubit controller, consisting of firmware, software, and an optional frontend for use with Xilinx RFSoC development boards.
 The goal of the project is to provide a powerful, flexible, cost-effective, and easy-to-learn platform for control and readout of a diverse range of quantum systems.
