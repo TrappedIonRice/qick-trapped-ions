@@ -2,7 +2,7 @@
 
 This is a fork of the QICK library used for ion trap applications. 
 
-# Description of QICK: Quantum Instrumentation Control Kit
+## Description of QICK: Quantum Instrumentation Control Kit
 
 QICK is an open-source qubit controller, consisting of firmware, software, and an optional frontend for use with Xilinx RFSoC development boards.
 The goal of the project is to provide a powerful, flexible, cost-effective, and easy-to-learn platform for control and readout of a diverse range of quantum systems.
@@ -21,7 +21,7 @@ See our [Read the Docs site](https://docs.qick.dev/) for:
 * [Ways to communicate](https://docs.qick.dev/latest/contact.html) with QICK developers and the community
 * Extensions to QICK for added functionailty
 
-## Updates
+### Updates
 
 The QICK firmware and software is still very much a work in progress.
 We strive to be consistent with the APIs but cannot guarantee backwards compatibility.
@@ -48,7 +48,7 @@ We guarantee the following for releases:
 
 We recommend that you "watch" this repository on GitHub to get automatic notifications of pull requests and releases.
 
-## Contribute
+### Contribute
 
 You are welcome to contribute to QICK development by forking this repository and sending pull requests.
 
@@ -56,14 +56,14 @@ All contributions are expected to be consistent with [PEP 8 -- Style Guide for P
 
 We welcome bug reports and feature requests via GitHub Issues.
 
-## License
+### License
 
 The QICK source code is licensed under the MIT license, which you can find in the [LICENSE file](LICENSE).
 You are free to use QICK, with or without modification, under the terms of this license.
 
 The [QICK logo](graphics/logoQICK.svg) was designed by Dr. Christie Chiu.
 
-### Open-Source Commitment
+#### Open-Source Commitment
 
 QICK is and will remain a fully open-source project under the MIT license.
 Commercial partnerships or integration agreements with third-party companies do not change the licensing, governance, or availability of this project.
