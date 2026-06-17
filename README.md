@@ -1,6 +1,6 @@
 # QICK Library for Ion Traps
 
-This is a fork of the QICK library used for ion trap applications. 
+This is a fork of the QICK library used for ion trap applications. New code can be found under *Trapped Ion Code* and new firmware can be found under *firmware > projects* (including the 8mixmux8 firmware).
 
 ## Description of QICK: Quantum Instrumentation Control Kit
 
