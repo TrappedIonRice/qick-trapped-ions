@@ -1,18 +1,18 @@
 /*
-TRANSLATE from tProc_v2 to diferente Signals Souorces.
+TRANSLATE from tProc_v2 to different Signals Souorces.
 
 // tProc-v2 OUT
 // |-----------|-----------|-----------|-----------|-----------|-----------|	
 // | 167..152  |  151..120 |  119..88  |   87..64  |   63..32  |   31..0   |	
 // |-----------|-----------|-----------|-----------|-----------|-----------|	
-// |    CONF   |    LENGHT |    GAIN   |    ENV    |    PHASE  |    FREQ   |	
+// |    CONF   |    LENGTH |    GAIN   |    ENV    |    PHASE  |    FREQ   |	
 // |    16-bit |    32-bit |    32-bit |    24-bit |    32-bit |    32-bit | 
 // |-----------|-----------|-----------|-----------|-----------|-----------|	
 
 
 */
 module sg_translator # (
-    OUT_TYPE = 0 // (0:gen_v6, 1:int4_v1, 2:mux4_v1, 3:readout)
+    OUT_TYPE = 0 // (0:gen_v6, 1:int4_v1, 2:mux4_v1, 3:readout, 4:mixmux16)
 ) (
    // Reset and clock.
    input  wire aresetn  ,
@@ -36,10 +36,14 @@ module sg_translator # (
    // OUT DATA readout_v3 (SEL:3)   
    output wire [87:0]   m_readout_axis_tdata    ,
    output wire          m_readout_axis_tvalid   ,
-   input  wire          m_readout_axis_tready       
+   input  wire          m_readout_axis_tready   ,   
+   // OUT DATA mixmux16_v1 (SEL:4)   
+   output wire [47:0]   m_mixmux16_axis_tdata   ,
+   output wire          m_mixmux16_axis_tvalid  ,
+   input  wire          m_mixmux16_axis_tready    
 );
 
-// GET Data from tPtoc_v2
+// GET Data from tProc_v2
 ///////////////////////////////////////////////////////////////////////////////
 wire [31:0] freq, phase, gain, nsamp ;
 wire [23:0] addr ;
@@ -65,14 +69,16 @@ assign gen_v6_en  = (OUT_TYPE == 0) ;
 assign int4_en    = (OUT_TYPE == 1) ;
 assign mux4_en    = (OUT_TYPE == 2) ;
 assign readout_en = (OUT_TYPE == 3) ;
+assign mixmux16_en  = (OUT_TYPE == 4) ;
 
 // OUTPUTS
 
 ///////////////////////////////////////////////////////////////////////////////
-assign s_axis_tready =  ( gen_v6_en    ) ? m_gen_v6_axis_tready : (
-                        ( int4_en      ) ? m_int4_axis_tready   : (
-                        ( mux4_en      ) ? m_mux4_axis_tready   : (
-                        ( readout_en   ) ? m_readout_axis_tready   : 0 ))); 
+assign s_axis_tready =  ( gen_v6_en      ) ? m_gen_v6_axis_tready : (
+                        ( int4_en        ) ? m_int4_axis_tready   : (
+                        ( mux4_en        ) ? m_mux4_axis_tready   : (
+                        ( readout_en     ) ? m_readout_axis_tready   : (
+                        ( mixmux16_en    ) ? m_mixmux16_axis_tready   : 0 ))));
 ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -148,5 +154,18 @@ assign m_readout_axis_tdata[ 63: 32] = phase [31:0] ;
 assign m_readout_axis_tdata[ 31:  0] = freq  [31:0] ;
 
 assign m_readout_axis_tvalid = readout_en ? s_axis_tvalid : 0 ;
+
+///////////////////////////////////////////////////////////////////////////////
+// axis_sg_mixmux16_v1
+// |----------|----------|
+// | 47 .. 16 | 15 .. 0  |
+// |----------|----------|
+// |    mask  |   nsamp  |
+// |   16-bit |   16-bit |
+// |----------|----------|
+assign m_mixmux16_axis_tdata[47:32]  = conf   [15:0]  ;
+assign m_mixmux16_axis_tdata[15:0]   = nsamp  [15:0]  ;
+
+assign m_mixmux16_axis_tvalid = mixmux16_en ? s_axis_tvalid : 0 ;
 
 endmodule
