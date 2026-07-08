@@ -1997,6 +1997,7 @@ class QickProgramV2(AsmV2, AbsQickProgram):
                 'axis_sg_mux4_v3': MultiplexedGenManager,
                 'axis_sg_mux8_v1': MultiplexedGenManager,
                 'axis_sg_mixmux8_v1': MultiplexedGenManager,
+                'axis_sg_mixmux16_v1': MultiplexedGenManager,
                 }
 
     REG_ALIASES = {
