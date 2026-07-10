@@ -510,21 +510,6 @@ class AxisSgMux8V1(AbsMuxSignalGen):
     HAS_PHASE = True
     B_PHASE = 32
 
-class AxisSgMixMux8V1(AbsMuxSignalGen):
-    """
-    AxisSgMux8V1
-
-    AXIS Signal Generator with 8 muxed outputs, using DAC mixer.
-    """
-    bindto = ['user.org:user:axis_sg_mixmux8_v1:1.0',
-              'QICK:QICK:axis_sg_mixmux8_v1:1.0']
-    HAS_MIXER = True
-    B_DDS = 32
-    N_TONES = 8
-    HAS_GAIN = True
-    HAS_PHASE = True
-    B_PHASE = 32
-
 # New MixMux16 Generator Driver Class
 class AxisSgMixMux16V1(AbsMuxSignalGen):
     """

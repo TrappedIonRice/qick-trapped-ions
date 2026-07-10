@@ -158,13 +158,13 @@ assign m_readout_axis_tvalid = readout_en ? s_axis_tvalid : 0 ;
 ///////////////////////////////////////////////////////////////////////////////
 // axis_sg_mixmux16_v1
 // |----------|----------|
-// | 47 .. 16 | 15 .. 0  |
+// | 47 .. 16 | 31 .. 0  |
 // |----------|----------|
 // |    mask  |   nsamp  |
-// |   16-bit |   16-bit |
+// |   16-bit |   32-bit |
 // |----------|----------|
 assign m_mixmux16_axis_tdata[47:32]  = conf   [15:0]  ;
-assign m_mixmux16_axis_tdata[15:0]   = nsamp  [15:0]  ;
+assign m_mixmux16_axis_tdata[31:0]   = nsamp  [31:0]  ;
 
 assign m_mixmux16_axis_tvalid = mixmux16_en ? s_axis_tvalid : 0 ;
 

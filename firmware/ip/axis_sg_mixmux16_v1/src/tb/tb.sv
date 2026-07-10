@@ -4,7 +4,7 @@ import axi_mst_0_pkg::*;
 module tb();
 
 // DUT generics.
-parameter N_DDS = 1; // changed to 1 since we are only using 1 dds
+parameter N_DDS = 2; // changed to 2 since we are using 1-2 dds
 
 // s_axi interfase.
 reg						s_axi_aclk;
@@ -262,6 +262,7 @@ initial begin
 	tb_write_out 	<= 0;
 
 	#20000;
+	// $finish; // uncomment to stop simulation after 20000 time units
 
 end
 
@@ -320,7 +321,7 @@ initial begin
 	shortint real_d;
 
 	// Output file.
-	fd = $fopen("../../../../../tb/dout.csv","w");
+	fd = $fopen("../../../../../tb/dout.csv","w"); // change to save elsewhere
 
 	// Data format.
 	$fdisplay(fd, "valid, idx, real");
