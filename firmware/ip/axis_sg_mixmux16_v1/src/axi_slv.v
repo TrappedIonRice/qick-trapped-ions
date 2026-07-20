@@ -1070,61 +1070,57 @@ begin
     end
 end    
 
-assign PINC0_REG	= slv_reg0		;
-assign PINC1_REG	= slv_reg1		;
-assign PINC2_REG	= slv_reg2		;
-assign PINC3_REG	= slv_reg3		;
-assign PINC4_REG	= slv_reg4		;
-assign PINC5_REG	= slv_reg5		;
-assign PINC6_REG	= slv_reg6		;
-assign PINC7_REG	= slv_reg7		;
+assign PINC0_REG  = slv_reg0  ;
+assign PINC1_REG  = slv_reg1  ;
+assign PINC2_REG  = slv_reg2  ;
+assign PINC3_REG  = slv_reg3  ;
+assign PINC4_REG  = slv_reg4  ;
+assign PINC5_REG  = slv_reg5  ;
+assign PINC6_REG  = slv_reg6  ;
+assign PINC7_REG  = slv_reg7  ;
+assign PINC8_REG  = slv_reg8  ; // new PINC assignments for tones 8-15
+assign PINC9_REG  = slv_reg9  ;
+assign PINC10_REG = slv_reg10 ;
+assign PINC11_REG = slv_reg11 ;
+assign PINC12_REG = slv_reg12 ;
+assign PINC13_REG = slv_reg13 ;
+assign PINC14_REG = slv_reg14 ;
+assign PINC15_REG = slv_reg15 ;
 
-assign POFF0_REG	= slv_reg8		;
-assign POFF1_REG	= slv_reg9		;
-assign POFF2_REG	= slv_reg10		;
-assign POFF3_REG	= slv_reg11		;
-assign POFF4_REG	= slv_reg12		;
-assign POFF5_REG	= slv_reg13		;
-assign POFF6_REG	= slv_reg14		;
-assign POFF7_REG	= slv_reg15		;
+assign POFF0_REG  = slv_reg16 ;
+assign POFF1_REG  = slv_reg17 ;
+assign POFF2_REG  = slv_reg18 ;
+assign POFF3_REG  = slv_reg19 ;
+assign POFF4_REG  = slv_reg20 ;
+assign POFF5_REG  = slv_reg21 ;
+assign POFF6_REG  = slv_reg22 ;
+assign POFF7_REG  = slv_reg23 ;
+assign POFF8_REG  = slv_reg24 ; // new POFF assignments for tones 8-15
+assign POFF9_REG  = slv_reg25 ;
+assign POFF10_REG = slv_reg26 ;
+assign POFF11_REG = slv_reg27 ;
+assign POFF12_REG = slv_reg28 ;
+assign POFF13_REG = slv_reg29 ;
+assign POFF14_REG = slv_reg30 ;
+assign POFF15_REG = slv_reg31 ;
 
-assign GAIN0_REG	= slv_reg16		;
-assign GAIN1_REG	= slv_reg17		;
-assign GAIN2_REG	= slv_reg18		;
-assign GAIN3_REG	= slv_reg19		;
-assign GAIN4_REG	= slv_reg20		;
-assign GAIN5_REG	= slv_reg21		;
-assign GAIN6_REG	= slv_reg22		;
-assign GAIN7_REG	= slv_reg23		;
+assign GAIN0_REG  = slv_reg32 ;
+assign GAIN1_REG  = slv_reg33 ;
+assign GAIN2_REG  = slv_reg34 ;
+assign GAIN3_REG  = slv_reg35 ;
+assign GAIN4_REG  = slv_reg36 ;
+assign GAIN5_REG  = slv_reg37 ;
+assign GAIN6_REG  = slv_reg38 ;
+assign GAIN7_REG  = slv_reg39 ;
+assign GAIN8_REG  = slv_reg40 ; // new GAIN assignments for tones 8-15
+assign GAIN9_REG  = slv_reg41 ;
+assign GAIN10_REG = slv_reg42 ;
+assign GAIN11_REG = slv_reg43 ;
+assign GAIN12_REG = slv_reg44 ;
+assign GAIN13_REG = slv_reg45 ;
+assign GAIN14_REG = slv_reg46 ;
+assign GAIN15_REG = slv_reg47 ;
 
-assign WE_REG		= slv_reg24[0]	;
-
-// new register assignments for tones 8-15
-assign PINC8_REG	= slv_reg25		;
-assign PINC9_REG	= slv_reg26		;
-assign PINC10_REG	= slv_reg27		;
-assign PINC11_REG	= slv_reg28		;
-assign PINC12_REG	= slv_reg29		;
-assign PINC13_REG	= slv_reg30		;
-assign PINC14_REG	= slv_reg31		;
-assign PINC15_REG	= slv_reg32		;
-
-assign POFF8_REG	= slv_reg33		;
-assign POFF9_REG	= slv_reg34		;
-assign POFF10_REG	= slv_reg35		;
-assign POFF11_REG	= slv_reg36		;
-assign POFF12_REG	= slv_reg37		;
-assign POFF13_REG	= slv_reg38		;
-assign POFF14_REG	= slv_reg39		;
-assign POFF15_REG	= slv_reg40		;
-
-assign GAIN8_REG	= slv_reg41		;
-assign GAIN9_REG	= slv_reg42		;
-assign GAIN10_REG	= slv_reg43		;
-assign GAIN11_REG	= slv_reg44		;
-assign GAIN12_REG	= slv_reg45		;
-assign GAIN13_REG	= slv_reg46		;
-assign GAIN14_REG	= slv_reg47		;
-assign GAIN15_REG	= slv_reg48		;
+assign WE_REG     = slv_reg48[0] ; // changed to slv_reg48
 
 endmodule
